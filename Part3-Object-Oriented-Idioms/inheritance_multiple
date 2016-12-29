@@ -1,0 +1,43 @@
+Copying With Multiple Inheritance
+
+
+1. Distinguish Interface Inheritance from Implementation Inheritance
+
+- Interface inheritance creates a subtype, implying an 'is-a' relationship.
+
+- Inplementation inheritance avoid code duplication by reuse.
+
+
+
+2. Make Interfaces Explicit with ABCs
+
+If a class is designed to define an interface, it should be an explicit ABC.
+
+
+
+3. Use Mixins for Code Reuse
+
+- If a class is designed to provide method implementations for reuse by multiple
+unrelated subclasses, it should be an explicit mixin class. Conceptually, a
+mixin does not define a new type; it merely bundles methods for reuse.
+
+- Make mixins explicit by naming, usually with a ...Mixin suffix.
+
+- An ABC may also be a mixin; the reverse is not true. Because an ABC can implement
+concrete methods.
+
+
+
+4. Don't Subclass from More than One Concrete Class
+
+
+
+5. Provide Aggregate Classes to Users
+
+- If some combination of ABCs or mixins is particularly useful to client code,
+provide a class that bring them together in a sensible way.
+
+
+
+6. Favor Object Composition Over Class Inheritance
+
